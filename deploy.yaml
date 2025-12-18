@@ -20,7 +20,7 @@ jobs:
         
         Write-Host "Deploying to C:\inetpub\wwwroot..."
         
-        # Copy-Item -Path ".\*" -Destination "C:\inetpub\wwwroot" -Recurse -Force
+        Copy-Item -Path ".\*" -Destination "C:\inetpub\wwwroot" -Recurse -Force
         
         # Or if just running a script:
         # .\scripts\deploy.ps1
