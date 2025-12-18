@@ -1,0 +1,13 @@
+- name: Deploy Files
+      run: |
+        # Show where we are and what files we have
+        Get-Location
+        Get-ChildItem
+        
+        # Ensure destination exists
+        $dest = "C:\inetpub\wwwroot"
+        if (!(Test-Path $dest)) { New-Item -ItemType Directory -Path $dest }
+        
+        # Copy files
+        Copy-Item -Path ".*", "*" -Destination $dest -Recurse -Force -ErrorAction Stop
+        Write-Host "Successfully deployed to $dest"
