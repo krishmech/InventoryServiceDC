@@ -1,0 +1,28 @@
+name: Deploy to Windows EC2
+
+on:
+  push:
+    branches: [ "Dev" ] # Runs whenever you push to main
+
+jobs:
+  deploy:
+    # This tells GitHub to run this job ON YOUR EC2 INSTANCE, not their servers
+    runs-on: self-hosted 
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Deploy Files
+      run: |
+        # Example: Copy files from the repo to your IIS folder or App folder
+        # The 'source' is the current folder where checkout happened
+        
+        Write-Host "Deploying to C:\inetpub\wwwroot..."
+        
+        # Copy-Item -Path ".\*" -Destination "C:\inetpub\wwwroot" -Recurse -Force
+        
+        # Or if just running a script:
+        # .\scripts\deploy.ps1
+        
+        Write-Host "Deployment Complete!"
