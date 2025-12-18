@@ -1,5 +1,5 @@
 - name: Deploy Files
-      run: |
+      run:
         # Show where we are and what files we have
         Get-Location
         Get-ChildItem
