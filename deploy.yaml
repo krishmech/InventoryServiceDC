@@ -6,7 +6,6 @@ on:
 
 jobs:
   deploy:
-    # This tells GitHub to run this job ON YOUR EC2 INSTANCE, not their servers
     runs-on: self-hosted 
 
     steps:
